@@ -1,5 +1,5 @@
 tws:
-  image: ryankennedyio/ib-docker
+  image: ib
   ports:
     - "4003:4003"
     - "5900:5900"
@@ -7,18 +7,18 @@ tws:
     - ./IBController.ini:/root/IBController/IBController.ini
     - ./jts.ini:/root/Jts/jts.ini
   environment:
-    - TZ=Australia/Adelaide
+    - TZ=America/New_York
     # Variables pulled from /IBController/IBControllerGatewayStart.sh
     - VNC_PASSWORD=password
-    - TWS_MAJOR_VRSN=960
+    - TWS_MAJOR_VRSN=968
     - IBC_INI=/root/IBController/IBController.ini
     - TRADING_MODE=
     - IBC_PATH=/opt/IBController
     - TWS_PATH=/root/Jts
     - TWS_CONFIG_PATH=/root/Jts
     - LOG_PATH=/opt/IBController/Logs
-    - TWSUSERID=edemo
-    - TWSPASSWORD=demouser
+    - TWSUSERID=${IB_USER}
+    - TWSPASSWORD=${IB_PASSWORD}
     - FIXUSERID=
     - FIXPASSWORD=
     - JAVA_PATH=
