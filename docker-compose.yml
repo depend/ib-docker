@@ -1,16 +1,17 @@
 tws:
-  image: ib
+  image: ib_old
   ports:
     - "4003:4003"
     - "5900:5900"
   volumes:
     - ./IBController.ini:/root/IBController/IBController.ini
     - ./jts.ini:/root/Jts/jts.ini
+    - /Users/depend/src/ibagent/target:/target
   environment:
     - TZ=America/New_York
     # Variables pulled from /IBController/IBControllerGatewayStart.sh
     - VNC_PASSWORD=password
-    - TWS_MAJOR_VRSN=968
+    - TWS_MAJOR_VRSN=960
     - IBC_INI=/root/IBController/IBController.ini
     - TRADING_MODE=
     - IBC_PATH=/opt/IBController
