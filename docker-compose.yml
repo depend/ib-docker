@@ -1,12 +1,8 @@
 tws:
-  image: ib_old
+  image: ib
   ports:
     - "4003:4003"
     - "5900:5900"
-  volumes:
-    - ./IBController.ini:/root/IBController/IBController.ini
-    - ./jts.ini:/root/Jts/jts.ini
-    - /Users/depend/src/ibagent/target:/target
   environment:
     - TZ=America/New_York
     # Variables pulled from /IBController/IBControllerGatewayStart.sh

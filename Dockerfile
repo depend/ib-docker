@@ -44,5 +44,9 @@ RUN yes n | /opt/TWS/ibgateway-latest-standalone-linux-x64-v960.2a.sh
 RUN Xvfb :1 -screen 0 1024x768x24 2>&1 >/dev/null &
 RUN export DISPLAY=:1
 
+# Copy ini files
+COPY IBController.ini /root/IBController/IBController.ini
+COPY jts.ini /root/Jts/jts.ini
+
 ADD runscript.sh runscript.sh
 CMD bash runscript.sh
