@@ -49,4 +49,5 @@ COPY IBController.ini /root/IBController/IBController.ini
 COPY jts.ini /root/Jts/jts.ini
 
 ADD runscript.sh runscript.sh
+RUN chmod +x runscript.sh
 CMD bash runscript.sh
